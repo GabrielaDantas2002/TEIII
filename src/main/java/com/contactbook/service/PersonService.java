@@ -16,9 +16,9 @@ public class PersonService implements UserDetailsService {
     private PersonRepository repository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+    public UserDetails loadUserByUsername(String emailPerson) throws UsernameNotFoundException{
 
-        Person person = repository.findByEmailPerson(username)
+        Person person = repository.findByEmailPerson(emailPerson)
                 .orElseThrow(() -> new UsernameNotFoundException("Email not found"));
         return User
                 .builder()
