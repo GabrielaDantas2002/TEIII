@@ -22,10 +22,10 @@ public class Person {
     @Column(name = "name_person", nullable = false, length = 100)
     private String namePerson;
 
-    @Column(name = "email_person", nullable = false, length = 50)
+    @Column(name = "email_person", nullable = false, length = 50, unique = true)
     private String emailPerson;
 
-    @Column(name = "password_person", nullable = false, length = 50, unique = true)
+    @Column(name = "password_person", nullable = false, length = 50)
     private String passwordPerson;
 
 }
